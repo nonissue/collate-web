@@ -1,6 +1,30 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
+import React from 'react';
+import Head from 'next/head';
+import Nav from '../components/Nav';
+
+const link = `
+  color: 'hsla(205.9, 85.3%, 40%, 1)';
+  text-decoration: none;
+`;
+
+const themes = {
+  light: {
+    background: '#ffffff',
+    foreground: '#191b24',
+    text: '#191b24',
+    font: `'Work Sans', 'Helvetica Neue', 'Helvetica', Arial, sans-serif`,
+    link,
+    fonts: {
+      body: `'Work Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif`,
+      mono: `'Lekton', Monaco, 'Lucida Console',  monospace`,
+      header: `'Bebas Neue', 'Work Sans', Helvetica, sans-serif`,
+      alt: `'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif`,
+    },
+  },
+  dark: {
+    background: '#333333',
+  },
+};
 
 const Home = () => (
   <div>
@@ -26,10 +50,7 @@ const Home = () => (
           <h3>Next.js Learn &rarr;</h3>
           <p>Learn about Next.js by following an interactive tutorial!</p>
         </a>
-        <a
-          href="https://github.com/zeit/next.js/tree/master/examples"
-          className="card"
-        >
+        <a href="https://github.com/zeit/next.js/tree/master/examples" className="card">
           <h3>Examples &rarr;</h3>
           <p>Find other example boilerplates on the Next.js GitHub.</p>
         </a>
@@ -83,6 +104,6 @@ const Home = () => (
       }
     `}</style>
   </div>
-)
+);
 
-export default Home
+export default Home;

@@ -1,0 +1,33 @@
+.songs h1 {
+  color: #4a5568;
+  font-size: 1.2em;
+  margin: 5px;
+  /* font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif; */
+}
+
+.songs h3 {
+  color: #4a5568;
+  font-size: 1em;
+  margin: 5px;
+}
+.songs {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.grid > div {
+  width: calc(50% - 10px);
+  height: 30vh;
+  border: 1px solid #cfd9df;
+  margin: 5px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
