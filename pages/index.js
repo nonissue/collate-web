@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Nav from '../components/Nav';
+import Songs from './SongsList';
 
 const link = `
   color: 'hsla(205.9, 85.3%, 40%, 1)';
@@ -29,13 +30,15 @@ const themes = {
 const Home = () => (
   <div>
     <Head>
-      <title>Home</title>
+      <title>Collate Music</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <Nav />
 
-    <div className="hero">
+    <Songs />
+
+    {/* <div className="hero">
       <h1 className="title">Welcome to Next.js!</h1>
       <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
@@ -55,7 +58,7 @@ const Home = () => (
           <p>Find other example boilerplates on the Next.js GitHub.</p>
         </a>
       </div>
-    </div>
+    </div> */}
 
     <style jsx>{`
       .hero {
