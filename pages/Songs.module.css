@@ -17,6 +17,10 @@
   margin: 5px;
 }
 
+.controls * {
+  margin-left: 0.2rem;
+}
+
 .stack {
   --space: 1.5rem;
   display: flex;

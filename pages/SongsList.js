@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Songs.module.css';
 import Song from '../components/Song';
-import Nav from '../components/Nav';
+import Select from '../components/Select';
 import { songs } from '../mocks/songs';
 import SelectIcon from '../assets/select_minor.svg';
 
@@ -11,34 +11,38 @@ https://polaris.shopify.com/components/forms/select#navigation
 https://codesandbox.io/s/polaris-inline-select-ze3ho
 */
 
+/*
+Select:
+
+- Div: Select Wrapper
+  - Select: Select with options (hidden)
+  - Div: Select Display Content
+    - Span: Label
+    - Span: Selected Option
+    - Span: Icon
+
+
+*/
+
+const testOpts = [
+  { value: 'date', label: 'Date' },
+  { value: 'popular', label: 'Popular' },
+];
+
+const testOpts2 = [
+  { value: 'grid', label: 'Grid' },
+  { value: 'list', label: 'List' },
+];
+
 const Songs = () => {
   const shortList = songs.slice(0, 11);
 
   return (
     <div>
-      {/* <Nav /> */}
-
       <div className={styles.songs}>
-        {/* <h1>Songs</h1> */}
         <div className={styles.controls}>
-          <div className={styles.control}>
-            <span>Sort by:</span>
-            <select>
-              <option>popular</option>
-              <option>date</option>
-            </select>
-            <span className={styles.icon}>
-              <SelectIcon />
-            </span>
-          </div>
-          {/* <h3>Tags: (taglist)</h3> */}
-          <div className={styles.control}>
-            <span>View:</span>
-            <select>
-              <option>grid</option>
-              <option>list</option>
-            </select>
-          </div>
+          <Select options={testOpts} label="Sort by" />
+          <Select options={testOpts2} label="View mode" />
         </div>
         <div className={`${styles.grid} ${styles.stack}`}>
           <div className={styles.stackException}>Exception but not applied</div>
