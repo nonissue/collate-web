@@ -1,8 +1,18 @@
 .item {
   color: #191b24;
-  text-align: center;
+  /* text-align: center; */
   /* padding: 10px 0px; */
   /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
   /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
   /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+}
+.artist {
+  color: #637381;
+}
+.title {
+  font-weight: bold;
+}
+.album {
+  color: #637381;
+  font-style: italic;
 }
