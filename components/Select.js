@@ -1,27 +1,36 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './Select.module.css';
 import SelectIcon from '../assets/select_minor.svg';
 
 /**
- * @params options (array) Array of objects of form { label, value }
- * @params label (string) Select label string
- * @params labelinline (bool) Display label inline
+ * Custom select component
+ * Copied/implemented from scratch based on: https://polaris.shopify.com/components/forms/select#navigation
+ * Notes: labelinline not implemented ATM
+ * Err, how do we actually handle the change?
+ *
+ * @param {Array} options array of objects of form { label, value } NOTE: First object has to match initial state
+ * @param {String} label label string
+ * @param {Boolean} labelinline show label to the left of value
+ *
+ * @return {ReactComponent} returns react component
  */
 
-const Select = ({ options = [], label, labelinline = true }) => {
+// eslint-disable-next-line no-unused-vars
+const Select = ({ options, label, labelinline, onChangeSelect }) => {
   const [selected, setSelected] = useState(options[0]);
   const handleChange = e => {
-    console.log(e);
     let newSelection = options.find(option => e.currentTarget.value === option.value);
     if (newSelection === undefined) {
       newSelection = options[0].label;
     }
     setSelected(newSelection);
+    onChangeSelect(newSelection.value);
   };
 
   return (
     <div className={styles.wrapper}>
-      <select onChange={handleChange} onBlur={handleChange}>
+      <select className={styles.input} onChange={handleChange}>
         {options.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}
@@ -35,9 +44,24 @@ const Select = ({ options = [], label, labelinline = true }) => {
           <SelectIcon viewBox="0 0 20 20" />
         </span>
       </div>
-      <div className={styles.backdrop}></div>
+      <div className={styles.backdrop} />
     </div>
   );
+};
+
+Select.defaultProps = {
+  labelinline: true,
+};
+
+Select.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.string,
+      label: PropTypes.string,
+    }),
+  ).isRequired,
+  label: PropTypes.string.isRequired,
+  labelinline: PropTypes.bool,
 };
 
 export default Select;
