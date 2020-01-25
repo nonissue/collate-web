@@ -3,6 +3,7 @@ import styles from './Songs.module.css';
 import Song from '../components/Song';
 import Nav from '../components/Nav';
 import { songs } from '../mocks/songs';
+import SelectIcon from '../assets/select_minor.svg';
 
 /* for select:
 select with inline label
@@ -26,6 +27,9 @@ const Songs = () => {
               <option>popular</option>
               <option>date</option>
             </select>
+            <span className={styles.icon}>
+              <SelectIcon />
+            </span>
           </div>
           {/* <h3>Tags: (taglist)</h3> */}
           <div className={styles.control}>
