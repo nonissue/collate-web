@@ -1,19 +1,16 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { songs } from '../../mocks/songs';
 
-const songsindex = () => {
-  const titles = songs.map(s => s.title);
+export default function Song() {
+  const router = useRouter();
+
+  const currentSong = songs.find(s => s.id === router.query.id);
 
   return (
     <div>
-      <h1>Songs!</h1>
-      <ul>
-        {titles.map(title => (
-          <li>{title}</li>
-        ))}
-      </ul>
+      {currentSong && currentSong.title}
+      <p>This is the song content.</p>
     </div>
   );
-};
-
-export default songsindex;
+}
