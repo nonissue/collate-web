@@ -1,8 +1,6 @@
 .item {
-  /* color: #191b24; */
   color: #637381;
   position: relative;
-  /* height: 4.6em; */
   height: 100%;
 }
 
@@ -54,7 +52,6 @@ which is in songs.module.css (and should be moved here really) */
   line-height: 1em;
   color: #637381;
   text-decoration: underline;
-  /* color: #ff0000 !important; */
 }
 .title {
   composes: metadata;
