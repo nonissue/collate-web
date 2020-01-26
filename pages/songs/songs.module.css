@@ -89,6 +89,7 @@ to move: border-wrapper, content-item
   transition-duration: 200ms;
   will-change: border-color;
   /* transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64); */
+  /* height: 6em; */
   height: 100%;
 }
 

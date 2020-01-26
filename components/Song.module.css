@@ -2,6 +2,8 @@
   /* color: #191b24; */
   color: #637381;
   position: relative;
+  /* height: 4.6em; */
+  height: 100%;
 }
 
 /* workaround to get item to be as large as border-wrapper parent 
@@ -21,6 +23,7 @@ which is in songs.module.css (and should be moved here really) */
 
 .wrapper {
   line-height: 1.3em;
+  height: 100%;
 }
 .wrapper a {
   text-decoration: none;
