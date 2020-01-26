@@ -13,3 +13,11 @@
   - Copied this style: https://github.com/zeit/next-learn-demo/blob/master/4-clean-urls/pages/post.js
   - Ahh, i think that fixed it. Still get a preload warning, but nothing major.
   - and we can conditionally render the songs list in index.js.
+  - Had to handle direct visits with [id].js, but seems to be working
+- [ ] figure out case sensitivity and routing (maybe using now.json?)
+  - https://spectrum.chat/zeit/now/defining-next-js-route-rewrites-in-now-json~5e7c14aa-752a-45c3-a744-89721ecf7ceb
+  - https://github.com/zeit/next.js/tree/canary/examples/blog-starter
+
+## Interesting
+
+- [ ] https://github.com/zeit/next.js/blob/canary/examples/with-xstate/pages/index.js
