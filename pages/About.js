@@ -3,7 +3,7 @@ import Head from 'next/head';
 
 import Nav from '../components/Nav';
 
-const About = () => {
+const about = () => {
   return (
     <div>
       <Head>
@@ -17,4 +17,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default about;
