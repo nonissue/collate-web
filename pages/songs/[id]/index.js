@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { songs } from '../../mocks/songs';
+import { songs } from '../../../mocks/songs';
 
 export default function Song() {
   const router = useRouter();
