@@ -16,11 +16,11 @@ const Nav = () => (
             <a>About</a>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/about">
             <a>Dev</a>
           </Link>
-        </li>
+        </li> */}
       </ul>
 
       <style jsx>{`

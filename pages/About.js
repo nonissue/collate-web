@@ -12,6 +12,7 @@ const about = () => {
       </Head>
 
       <Nav />
+
       <div>About!</div>
     </div>
   );
