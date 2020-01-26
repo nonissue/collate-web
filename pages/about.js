@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-import Nav from '../components/Nav';
+import { Nav } from '../components/Nav';
 
 const about = () => {
   return (

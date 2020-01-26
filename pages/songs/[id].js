@@ -2,6 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { songs } from '../../mocks/songs';
 import { slugify } from '../../lib/slugify';
+import { Nav } from '../../components/Nav';
 
 export default function SongPage() {
   const router = useRouter();
@@ -10,8 +11,12 @@ export default function SongPage() {
 
   return (
     <div>
-      {currentSong && currentSong.title}
-      <p>This is the song content.</p>
+      <Nav />
+
+      <div>
+        {currentSong && currentSong.title}
+        <p>This is the song content.</p>
+      </div>
     </div>
   );
 }

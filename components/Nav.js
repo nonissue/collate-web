@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styles from './Nav.module.css';
 
-const Nav = () => (
+export const Nav = () => (
   <>
     <nav className={styles.nav}>
       <ul>
@@ -37,5 +37,3 @@ const Nav = () => (
     </nav>
   </>
 );
-
-export default Nav;
