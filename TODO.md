@@ -9,3 +9,4 @@
 ## Next.js
 
 - [ ] Figure out when I have to build vs just deploying?
+- [ ] figure out 404 errors https://stackoverflow.com/questions/55887316/next-js-404-error-for-all-preloaded-links
