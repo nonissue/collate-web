@@ -1,17 +1,12 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { songs } from '../../mocks/songs';
-import { List } from '../../components/List';
+import { slugify } from '../../lib/slugify';
 
-export default function Song() {
+export default function SongPage() {
   const router = useRouter();
 
-  const currentSong = songs.find(s => s.id === router.query.id);
-
-  if (!currentSong) {
-    return <List />;
-    // return <div>Test</div>;
-  }
+  const currentSong = songs.find(s => slugify(s.title) === router.query.id);
 
   return (
     <div>

@@ -1,7 +1,7 @@
 import React from 'react';
-import { songs } from '../../mocks/songs';
+import { songs } from '../mocks/songs';
 
-const songsindex = () => {
+export const List = () => {
   const titles = songs.map(s => s.title);
 
   return (
@@ -15,5 +15,3 @@ const songsindex = () => {
     </div>
   );
 };
-
-export default songsindex;
