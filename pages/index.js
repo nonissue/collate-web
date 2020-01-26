@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Nav from '../components/Nav';
-import Songs from './songs/index';
+import Songs from './songlist';
 
 const link = `
   color: 'hsla(205.9, 85.3%, 40%, 1)';

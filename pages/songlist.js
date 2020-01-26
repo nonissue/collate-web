@@ -1,9 +1,9 @@
 import React, { useReducer } from 'react';
 import { ViewMajorMonotone, SortMinor } from '@shopify/polaris-icons';
 import styles from './songs.module.css';
-import Song from '../../components/Song';
-import Select from '../../components/Select';
-import { songs } from '../../mocks/songs';
+import Song from '../components/Song';
+import Select from '../components/Select';
+import { songs } from '../mocks/songs';
 
 /* for select:
 select with inline label
