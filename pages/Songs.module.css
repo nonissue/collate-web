@@ -1,6 +1,7 @@
 .songs {
-  max-width: 600px;
+  max-width: 90%;
   margin: 0 auto;
+
   /* font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif; */
 }
 
@@ -40,8 +41,8 @@
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
   padding: 0.7em;
   margin: 0;
-  width: calc(50% - 0em);
-  margin: 0.5em 0;
+  /* width: calc(50% - 0em); */
+  /* margin: 0.5em 0; */
   box-sizing: border-box;
   border-radius: 5px;
 }
@@ -56,17 +57,27 @@
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 5px));
+  grid-column-gap: 10px;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.grid > div {
+  border: 0.5px solid rgb(145, 145, 145);
+  border-radius: 5px;
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.04), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
+  margin-bottom: 10px;
+  padding: 0.7em;
+  box-sizing: border-box;
 }
 
 .grids > div {
   width: 100%;
   height: 20vh;
   border: 1px solid #cfd9df;
-
   box-sizing: border-box;
   justify-content: center;
   align-items: center;
@@ -77,10 +88,19 @@
   flex-wrap: wrap;
   align-items: flex-start;
   flex-direction: column;
+  margin-top: 10px;
 }
 
 .list > div {
+  margin-top: 0;
   width: 100%;
+  border: 0.5px solid rgb(145, 145, 145);
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.04), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
+  padding: 0.7em;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border-radius: 5px;
 }
 
 .controls {

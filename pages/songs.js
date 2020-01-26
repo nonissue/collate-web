@@ -29,8 +29,8 @@ const sortByOptions = [
 ];
 
 const viewModeOptions = [
-  { value: 'list', label: 'List' },
   { value: 'grid', label: 'Grid' },
+  { value: 'list', label: 'List' },
 ];
 
 // initial state needs to be the same as the first option provided
@@ -86,7 +86,7 @@ const Songs = () => {
         </div>
         {/* <div className={`${styles.grid} ${styles.stack} `}> */}
         <div
-          className={`${styles.stack}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
+          className={`${styles.stackz}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
         >
           {/* <div className={styles.stackException}>Exception but not applied</div>
           <div>No Exception</div>

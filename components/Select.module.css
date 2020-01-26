@@ -1,13 +1,15 @@
 .wrapper {
   position: relative;
-  font-size: 0.8em;
+  font-size: 16px;
   width: 100%;
   box-sizing: border-box;
-  margin: 0.5em;
-  margin: 0.5em auto;
+  margin: 0.2em;
+  margin: 0.1em auto;
+  /* max-width: 90%; */
 }
 .wrapper select {
-  font-size: 0.8em;
+  /* prevent ios input zoom */
+  font-size: 16px;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -27,7 +29,6 @@
   opacity: 1;
 }
 .control {
-  /* margin-left: 25em; */
 }
 .content {
   display: flex;
