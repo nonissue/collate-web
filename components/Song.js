@@ -4,7 +4,7 @@ import styles from './Song.module.css';
 
 const Song = ({ title, artist, album, id }) => (
   <div className={styles.wrapper}>
-    <Link href={`/songs/${id}`}>
+    <Link href={`/songs/${id}`} as={`/songs/${id}`}>
       <a>
         <div className={styles.item}>
           <div>
