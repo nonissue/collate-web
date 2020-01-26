@@ -8,11 +8,7 @@ const Song = ({ title, artist, album, id }) => (
       <a>
         <div className={styles.item}>
           <div>
-            <div className={styles.artist}>
-              {artist}
-              {/* <a>{artist}</a> */}
-              {/* </Link> */}
-            </div>
+            <div className={styles.artist}>{artist}</div>
             <div className={styles.title}>{title}</div>
             <div className={styles.album}>{album}</div>
           </div>

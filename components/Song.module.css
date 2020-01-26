@@ -1,40 +1,73 @@
 .item {
-  color: #191b24;
-  /* text-align: center; */
-  /* padding: 10px 0px; */
-  /* background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%); */
-  /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
-  /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+  /* color: #191b24; */
+  color: #637381;
+  position: relative;
 }
+
+/* workaround to get item to be as large as border-wrapper parent 
+which is in songs.module.css (and should be moved here really) */
+.item::before {
+  padding: 0.75em;
+  content: '';
+  position: absolute;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  left: 50%;
+  top: 50%;
+  opacity: 0.5;
+  transform: translate(-50%, -50%);
+}
+
 .wrapper {
   line-height: 1.3em;
 }
 .wrapper a {
   text-decoration: none;
-  /* color: #191b24; */
 }
+
+.item:hover .artist,
+.item:hover .album,
+.item:hover .title {
+  color: #29368f;
+}
+
+.item:hover .title {
+  color: #171ba7;
+}
+
+.metadata {
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
+}
+
 .artist {
+  composes: metadata;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 0.7em;
   line-height: 1em;
-  /* line-height: 1.2em; */
   color: #637381;
   text-decoration: underline;
   /* color: #ff0000 !important; */
 }
 .title {
+  composes: metadata;
   font-weight: bold;
   margin-top: 0.35em;
+  color: #242e36;
   /* line-height: 1.8em; */
 }
 .album {
+  composes: metadata;
   color: #637381;
+  /* color: #ff0000; */
   /* line-height: 1.6em; */
   margin-top: 0.3em;
   line-height: 1em;
-  color: #93a2af;
+  /* color: #93a2af; */
   /* font-style: italic; */
   font-size: 0.8em;
 }

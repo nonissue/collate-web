@@ -17,7 +17,7 @@ import SelectIcon from '../assets/select_minor.svg';
  */
 
 // eslint-disable-next-line no-unused-vars
-const Select = ({ options, label, labelinline, onChangeSelect }) => {
+const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
   const [selected, setSelected] = useState(options[0]);
   const handleChange = e => {
     let newSelection = options.find(option => e.currentTarget.value === option.value);
@@ -38,9 +38,10 @@ const Select = ({ options, label, labelinline, onChangeSelect }) => {
         ))}
       </select>
       <div className={styles.content}>
+        <Icon viewBox="0 0 20 20" className={styles['label-icon']} />
         <span className={styles.label}>{label}</span>
         <span className={styles.selected}>{selected.label}</span>
-        <span className={styles.icon}>
+        <span className={styles['select-icon']}>
           <SelectIcon viewBox="0 0 20 20" />
         </span>
       </div>

@@ -56,31 +56,58 @@
   --space: 3rem;
 }
 
+/* should move as much as possible from here to the actual song css module 
+styling children this way is messy 
+to move: border-wrapper, content-item
+*/
+.border-wrapper {
+  border-radius: 7px;
+  border: 2px solid transparent;
+  margin-bottom: 10px;
+  /* -webkit-transition-property: border-color, background; */
+  transition-property: border-color;
+  transition-duration: 200ms;
+  -webkit-transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64);
+  -webkit-transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64);
+  background: rgba(243, 242, 242, 0.3);
+}
+
+.border-wrapper:hover {
+  border: 2px solid hsla(231.9, 46.9%, 56.5%, 0.8);
+  background: rgba(255, 255, 255, 1);
+}
+
+.content-item {
+  border: 0.75px solid rgba(61, 61, 61, 0.3);
+  border-radius: 5px;
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
+  padding: 0.7em;
+  box-sizing: border-box;
+  transition-property: border-color;
+  transition-duration: 200ms;
+  will-change: border-color;
+  /* transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64); */
+  height: 100%;
+}
+
+.content-item:hover {
+  /* box-shadow: 0 3px 1px hsla(231.9, 46.9%, 56.5%, 0.3),
+    0 1.8px 2.3px hsla(231.9, 46.9%, 56.5%, 0.04), 0 3.4px 4.4px hsla(231.9, 46.9%, 56.5%, 0.03),
+    0 6px 5.8px hsla(231.9, 46.9%, 56.5%, 0.03); */
+  border-color: transparent;
+}
+
+.content > div:hover {
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 5px));
   grid-column-gap: 10px;
   width: 100%;
   margin-top: 1em;
-}
-
-.grid > div {
-  border: 0.5px solid rgb(145, 145, 145);
-  border-radius: 5px;
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.04), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  margin-bottom: 10px;
-  padding: 0.7em;
-  box-sizing: border-box;
-}
-
-.grids > div {
-  width: 100%;
-  height: 20vh;
-  border: 1px solid #cfd9df;
-  box-sizing: border-box;
-  justify-content: center;
-  align-items: center;
 }
 
 .list {
@@ -92,15 +119,8 @@
 }
 
 .list > div {
-  margin-top: 0;
   width: 100%;
-  border: 0.5px solid rgb(145, 145, 145);
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.04), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  padding: 0.7em;
-  margin-bottom: 10px;
   box-sizing: border-box;
-  border-radius: 5px;
 }
 
 .controls {

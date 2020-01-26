@@ -4,6 +4,8 @@ import Song from '../components/Song';
 import Select from '../components/Select';
 import { songs } from '../mocks/songs';
 
+import { ViewMajorMonotone, SortMinor } from '@shopify/polaris-icons';
+
 /* for select:
 select with inline label
 https://polaris.shopify.com/components/forms/select#navigation
@@ -81,24 +83,40 @@ const Songs = () => {
       {/* {state.viewMode} */}
       <div className={styles.songs}>
         <div className={`${styles.controls}`}>
-          <Select options={sortByOptions} label="Sort by" onChangeSelect={changeSortBy} />
-          <Select options={viewModeOptions} label="View mode" onChangeSelect={changeView} />
+          <Select
+            options={sortByOptions}
+            label="Sort by"
+            onChangeSelect={changeSortBy}
+            Icon={SortMinor}
+          />
+          <Select
+            options={viewModeOptions}
+            label="View mode"
+            onChangeSelect={changeView}
+            Icon={ViewMajorMonotone}
+          />
         </div>
         {/* <div className={`${styles.grid} ${styles.stack} `}> */}
+
         <div
-          className={`${styles.stackz}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
+          className={`${styles.content}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
         >
           {/* <div className={styles.stackException}>Exception but not applied</div>
           <div>No Exception</div>
           <div className={styles.stackException}>Exception</div> */}
           {shortList.map(song => (
-            <Song
-              key={song.id}
-              artist={song.artist.first}
-              album={song.album}
-              title={song.title}
-              id={song.id}
-            />
+            <div className={styles['border-wrapper']}>
+              <div className={styles['content-item']}>
+                <Song
+                  key={song.id}
+                  artist={song.artist.first}
+                  album={song.album}
+                  title={song.title}
+                  id={song.id}
+                  // className={styles['content-item']}
+                />
+              </div>
+            </div>
           ))}
         </div>
       </div>

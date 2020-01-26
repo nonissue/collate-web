@@ -4,7 +4,7 @@
   width: 100%;
   box-sizing: border-box;
   margin: 0.2em;
-  margin: 0.1em auto;
+  margin: 0.2em auto;
   /* max-width: 90%; */
 }
 .wrapper select {
@@ -44,7 +44,34 @@
   margin-right: 0.3em;
   color: #637381;
 }
-.icon {
+
+.label-icon {
+  width: 1rem;
+  opacity: 0.8;
+  margin-right: 0.5em;
+  height: 1rem;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  line-height: 2rem;
+}
+.label-icon svg,
+.label-icon path {
+  /* path-width: 5px; */
+  stroke-width: 0.4px;
+  stroke: #fff;
+  /* fill-opacity: 0.8; */
+  /* stroke-opacity: 0; */
+  fill-opacity: 0.5;
+  fill: #637381;
+  fill: rgb(65, 21, 146);
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.select-icon {
   width: 1.2rem;
   height: 1.2rem;
   max-width: 100%;
@@ -52,8 +79,8 @@
   display: block;
   line-height: 2rem;
 }
-.icon svg,
-.icon path {
+.select-icon svg,
+.select-icon path {
   fill: #637381;
   position: relative;
   display: block;
