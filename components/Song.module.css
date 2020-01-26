@@ -6,13 +6,35 @@
   /* background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); */
   /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
 }
+.wrapper {
+  line-height: 1.3em;
+}
+.wrapper a {
+  text-decoration: none;
+  /* color: #191b24; */
+}
 .artist {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 200;
+  font-size: 0.8em;
+  line-height: 1em;
+  /* line-height: 1.2em; */
   color: #637381;
+  text-decoration: underline;
+  /* color: #ff0000 !important; */
 }
 .title {
   font-weight: bold;
+  margin-top: 0.35em;
+  /* line-height: 1.8em; */
 }
 .album {
   color: #637381;
-  font-style: italic;
+  /* line-height: 1.6em; */
+  margin-top: 0.3em;
+  line-height: 1em;
+  color: #93a2af;
+  /* font-style: italic; */
+  font-size: 0.8em;
 }

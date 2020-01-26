@@ -29,8 +29,8 @@ const sortByOptions = [
 ];
 
 const viewModeOptions = [
-  { value: 'grid', label: 'Grid' },
   { value: 'list', label: 'List' },
+  { value: 'grid', label: 'Grid' },
 ];
 
 // initial state needs to be the same as the first option provided
@@ -78,17 +78,27 @@ const Songs = () => {
 
   return (
     <div>
+      {/* {state.viewMode} */}
       <div className={styles.songs}>
-        <div className={styles.controls}>
+        <div className={`${styles.controls}`}>
           <Select options={sortByOptions} label="Sort by" onChangeSelect={changeSortBy} />
           <Select options={viewModeOptions} label="View mode" onChangeSelect={changeView} />
         </div>
-        <div className={`${styles.grid} ${styles.stack}`}>
+        {/* <div className={`${styles.grid} ${styles.stack} `}> */}
+        <div
+          className={`${styles.stack}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
+        >
           {/* <div className={styles.stackException}>Exception but not applied</div>
           <div>No Exception</div>
           <div className={styles.stackException}>Exception</div> */}
           {shortList.map(song => (
-            <Song key={song.id} artist={song.artist.first} album={song.album} title={song.title} />
+            <Song
+              key={song.id}
+              artist={song.artist.first}
+              album={song.album}
+              title={song.title}
+              id={song.id}
+            />
           ))}
         </div>
       </div>

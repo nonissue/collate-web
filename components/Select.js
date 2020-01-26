@@ -30,7 +30,7 @@ const Select = ({ options, label, labelinline, onChangeSelect }) => {
 
   return (
     <div className={styles.wrapper}>
-      <select className={styles.input} onChange={handleChange}>
+      <select className={styles.input} onBlur={handleChange} onChange={handleChange}>
         {options.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}

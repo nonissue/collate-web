@@ -1,7 +1,10 @@
 .wrapper {
   position: relative;
   font-size: 0.8em;
-  width: 25%;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5em;
+  margin: 0.5em auto;
 }
 .wrapper select {
   font-size: 0.8em;
@@ -11,7 +14,6 @@
   top: 0;
   left: 0;
   line-height: 1.2em;
-  -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
   opacity: 0.001;
@@ -22,14 +24,15 @@
   box-shadow: 0 0 0 0.75px #5c6ac4, 0 0 0 0 transparent;
   background: #5c6ac4;
   box-shadow: none;
+  opacity: 1;
 }
 .control {
-  margin-left: 0.5;
+  /* margin-left: 25em; */
 }
 .content {
   display: flex;
   align-items: center;
-  padding: 0.3em 0.4em;
+  padding: 0.4em 0.6em;
   z-index: 20;
   position: relative;
 }
@@ -37,7 +40,7 @@
   flex: 1 1;
 }
 .label {
-  /* margin-right: 0em; */
+  margin-right: 0.3em;
   color: #637381;
 }
 .icon {
@@ -60,9 +63,10 @@
 
 .backdrop {
   background-color: #c4cdd5;
+  opacity: 0.6;
   border: 0.075rem solid transparent;
   box-shadow: 0 0 0 1px transparent, 0 0.75px 0 0 rgba(22, 29, 37, 0.05);
-  /* border-radius: 3px; */
+  border-radius: 4px;
   transition-property: box-shadow, background-color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -82,5 +86,5 @@
   right: 0;
   display: block;
   background: linear-gradient(to bottom, white, #f9fafb);
-  /* border-radius: 2px; */
+  border-radius: 3px;
 }
