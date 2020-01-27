@@ -71,9 +71,9 @@ to move: border-wrapper, content-item
 }
 
 .border-wrapper:hover {
-  border: 2px solid hsla(231.9, 46.9%, 56.5%, 0.8);
-  background: #f9fafb;
-  box-sizing: border-box;
+  /* border: 2px solid hsla(231.9, 46.9%, 56.5%, 0.8); */
+  /* background: #f9fafb; */
+  /* box-sizing: border-box; */
 }
 
 .content-item {
@@ -84,8 +84,9 @@ to move: border-wrapper, content-item
   box-shadow: none;
   padding: 0.7em;
   /* compensates for the invisible border wrapper (otherwise our items wouldn't line up with 
-  other page coentent) */
-  margin: -2px;
+  other page coentent) Nevermind, might not need it */
+  /* margin: -2px; */
+  /* margin: -2px -2px; */
   box-sizing: border-box;
   transition-property: border-color, border-width;
   transition-duration: 200ms;
@@ -96,10 +97,10 @@ to move: border-wrapper, content-item
 .content-item:hover {
   box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  border-color: transparent;
-}
-
-.content > div:hover {
+  /* border-color: #ff0000; */
+  border-color: hsla(231.9, 46.9%, 56.5%, 0.8);
+  /* border: 2px solid hsla(231.9, 46.9%, 56.5%, 0.8); */
+  /* margin: 2px; */
 }
 
 .grid {
