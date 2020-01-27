@@ -64,39 +64,38 @@ to move: border-wrapper, content-item
   border-radius: 7px;
   border: 2px solid transparent;
   margin-bottom: 10px;
-  /* -webkit-transition-property: border-color, background; */
   transition-property: border-color;
-  transition-duration: 200ms;
-  -webkit-transition-duration: 200ms;
+  transition-duration: 100ms;
   transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64);
-  -webkit-transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64);
   background: rgba(243, 242, 242, 0.3);
 }
 
 .border-wrapper:hover {
   border: 2px solid hsla(231.9, 46.9%, 56.5%, 0.8);
-  background: rgba(255, 255, 255, 1);
+  background: #f9fafb;
+  box-sizing: border-box;
 }
 
 .content-item {
-  border: 0.75px solid rgba(61, 61, 61, 0.3);
+  border: 2px solid #c4cdd5;
   border-radius: 5px;
   box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
+  box-shadow: none;
   padding: 0.7em;
+  /* compensates for the invisible border wrapper (otherwise our items wouldn't line up with 
+  other page coentent) */
+  margin: -2px;
   box-sizing: border-box;
-  transition-property: border-color;
+  transition-property: border-color, border-width;
   transition-duration: 200ms;
   will-change: border-color;
-  /* transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64); */
-  /* height: 6em; */
   height: 100%;
 }
 
 .content-item:hover {
-  /* box-shadow: 0 3px 1px hsla(231.9, 46.9%, 56.5%, 0.3),
-    0 1.8px 2.3px hsla(231.9, 46.9%, 56.5%, 0.04), 0 3.4px 4.4px hsla(231.9, 46.9%, 56.5%, 0.03),
-    0 6px 5.8px hsla(231.9, 46.9%, 56.5%, 0.03); */
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
   border-color: transparent;
 }
 

@@ -5,7 +5,8 @@
   box-sizing: border-box;
   margin: 0.25em;
   margin: 0.25em auto;
-  /* max-width: 90%; */
+  color: #230051;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
 }
 .wrapper select {
   /* prevent ios input zoom */
@@ -16,19 +17,15 @@
   top: 0;
   left: 0;
   line-height: 1.2em;
-  /* -webkit-appearance: none; */
   appearance: none;
   opacity: 0.001;
   z-index: 30;
   background: #fff;
 }
 .wrapper select:focus ~ .backdrop {
-  box-shadow: 0 0 0 1px #5c6ac4, 0 0 0 0 transparent;
+  box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent;
   background: #5c6ac4;
-  /* box-shadow: none; */
-  opacity: 1;
-}
-.control {
+  opacity: 0.8;
 }
 .content {
   display: flex;
@@ -44,7 +41,6 @@
   margin-right: 0.3em;
   color: #637381;
 }
-
 .label-icon {
   width: 1rem;
   opacity: 0.8;
@@ -57,13 +53,9 @@
 }
 .label-icon svg,
 .label-icon path {
-  /* path-width: 5px; */
   stroke-width: 0.4px;
   stroke: #fff;
-  /* fill-opacity: 0.8; */
-  /* stroke-opacity: 0; */
   fill-opacity: 0.5;
-  fill: #637381;
   fill: rgb(65, 21, 146);
   position: relative;
   display: block;
@@ -72,12 +64,14 @@
   max-height: 100%;
 }
 .select-icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1rem;
+  height: 1rem;
   max-width: 100%;
   max-height: 100%;
   display: block;
   line-height: 2rem;
+  margin-right: -0.2em;
+  font-size: 1rem;
 }
 .select-icon svg,
 .select-icon path {
@@ -88,13 +82,12 @@
   max-width: 100%;
   max-height: 100%;
 }
-
 .backdrop {
   background-color: #c4cdd5;
   opacity: 0.6;
-  border: 1px solid transparent;
-  box-shadow: 0 0 0 1px transparent, 0 0.75px 0 0 rgba(22, 29, 37, 0.05);
-  border-radius: 4px;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0.5px transparent, 0 0.05rem 0 0 rgba(22, 29, 37, 0.05);
+  border-radius: 5px;
   transition-property: box-shadow, background-color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -114,5 +107,5 @@
   right: 0;
   display: block;
   background: linear-gradient(to bottom, white, #f9fafb);
-  border-radius: 3px;
+  border-radius: 4px;
 }

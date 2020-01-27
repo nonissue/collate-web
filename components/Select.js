@@ -38,7 +38,7 @@ const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
         ))}
       </select>
       <div className={styles.content}>
-        <Icon viewBox="0 0 20 20" className={styles['label-icon']} />
+        {Icon ? <Icon viewBox="0 0 20 20" className={styles['label-icon']} /> : ''}
         <span className={styles.label}>{label}</span>
         <span className={styles.selected}>{selected.label}</span>
         <span className={styles['select-icon']}>
@@ -52,6 +52,7 @@ const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
 
 Select.defaultProps = {
   labelinline: true,
+  onChangeSelect: () => {},
 };
 
 Select.propTypes = {
@@ -63,6 +64,7 @@ Select.propTypes = {
   ).isRequired,
   label: PropTypes.string.isRequired,
   labelinline: PropTypes.bool,
+  onChangeSelect: PropTypes.func,
 };
 
 export default Select;

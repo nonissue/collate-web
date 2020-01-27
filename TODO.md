@@ -7,6 +7,11 @@
 - [ ] Media queries?
 - [ ] boxshadow on select looks bad in chrome
 
+## Theming
+
+- [ ] https://github.com/Shopify/polaris-react/blob/7001057a77db90c1fd97311e95bcc5213d0a44ab/src/styles/foundation/_shadows.scss
+- [ ] https://polaris.shopify.com/design/colors#section-color-palette
+
 ## Next.js
 
 - [ ] Figure out when I have to build vs just deploying?
