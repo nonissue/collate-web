@@ -5,9 +5,7 @@ import { slugify } from '../lib/slugify';
 
 const Song = ({ title, artist, album, id }) => (
   <div className={styles.wrapper}>
-    {/* <Link href={`/songs/?id=$${id}`} as={`/songs/${id}`}> */}
     <Link href={`/songs?id=${id}`} as={`/songs/${slugify(title)}`}>
-      {/* <Link href={`/songs/[${id}]`} as={`/songs/${id}`}> */}
       <a>
         <div className={styles.item}>
           <div>

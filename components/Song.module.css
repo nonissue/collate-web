@@ -1,9 +1,11 @@
+/*
+TODO: Migrate inherited styles from song list so styling is atomic
+*/
 .item {
   color: #637381;
   position: relative;
   height: 100%;
 }
-
 /* workaround to get item to be as large as border-wrapper parent 
 which is in songs.module.css (and should be moved here really) */
 .item::before {
@@ -18,7 +20,6 @@ which is in songs.module.css (and should be moved here really) */
   opacity: 1;
   transform: translate(-50%, -50%);
 }
-
 .wrapper {
   line-height: 1.3em;
   height: 100%;
@@ -26,23 +27,19 @@ which is in songs.module.css (and should be moved here really) */
 .wrapper a {
   text-decoration: none;
 }
-
 .item:hover .artist,
 .item:hover .album,
 .item:hover .title {
   color: #29368f;
 }
-
 .item:hover .title {
   color: #171ba7;
 }
-
 .metadata {
   transition-property: color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
 }
-
 .artist {
   composes: metadata;
   text-transform: uppercase;
@@ -51,23 +48,17 @@ which is in songs.module.css (and should be moved here really) */
   font-size: 0.7em;
   line-height: 1em;
   color: #637381;
-  /* text-decoration: underline; */
 }
 .title {
   composes: metadata;
   font-weight: bold;
   margin-top: 0.15em;
   color: #212b36;
-  /* line-height: 1.8em; */
 }
 .album {
   composes: metadata;
   color: #637381;
-  /* color: #ff0000; */
-  /* line-height: 1.6em; */
   margin-top: 0.15em;
   line-height: 1em;
-  /* color: #93a2af; */
-  /* font-style: italic; */
   font-size: 0.8em;
 }
