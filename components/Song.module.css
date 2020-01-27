@@ -58,7 +58,7 @@ which is in songs.module.css (and should be moved here really) */
 .album {
   composes: metadata;
   color: #637381;
-  margin-top: 0.15em;
+  margin-top: 0.2em;
   line-height: 1em;
   font-size: 0.8em;
 }
