@@ -41,8 +41,6 @@
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
   padding: 0.7em;
   margin: 0;
-  /* width: calc(50% - 0em); */
-  /* margin: 0.5em 0; */
   box-sizing: border-box;
   border-radius: 5px;
 }
