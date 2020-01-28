@@ -14,7 +14,6 @@ TODO: Migrate inherited styles from song list so styling is atomic
   transition-duration: 200ms;
   will-change: border-color;
   height: 100%;
-  /* line-height: 1.3em; */
 }
 
 .item a {
@@ -34,7 +33,9 @@ TODO: Migrate inherited styles from song list so styling is atomic
 }
 
 /* workaround to get item to be as large as border-wrapper parent 
-which is in songs.module.css (and should be moved here really) */
+which is in songs.module.css (and should be moved here really)
+
+UPDATE: Probably not needed anymore*/
 .itemz::before {
   padding: 0.8em;
   content: '';
