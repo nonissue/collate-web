@@ -2,7 +2,7 @@
   max-width: 90%;
   margin: 0 auto;
 
-  /* font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif; */
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
 }
 
 .songs h1 {
@@ -22,87 +22,20 @@
   margin-left: 0em;
 }
 
-.stack {
-  --space: 0.5rem;
-  margin-top: calc(var(--space) * 1);
-  font-size: 1.1em;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.stack > * {
-  margin-top: 0;
-  margin-bottom: 0;
-  border-bottom: 0.5px solid rgb(145, 145, 145);
-  border-right: 0.5px solid rgb(145, 145, 145);
-  border: 0.5px solid rgb(145, 145, 145);
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.04), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  padding: 0.7em;
-  margin: 0;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
-.stack > * + * {
-  margin-top: var(--space);
-}
-
-.stackException,
-.stackException + * {
-  --space: 3rem;
-}
-
-/* should move as much as possible from here to the actual song css module 
-styling children this way is messy 
-to move: border-wrapper, content-item
-*/
-.border-wrapper {
-  border-radius: 7px;
-  border: 2px solid transparent;
-  margin-bottom: 10px;
-  transition-property: border-color;
-  transition-duration: 100ms;
-  transition-timing-function: cubic-bezier(1, 0.35, 0, 0.64);
-  background: rgba(243, 242, 242, 0.3);
-}
-
-.border-wrapper:hover {
-  /* border: 2px solid hsla(231.9, 46.9%, 56.5%, 0.8); */
-  /* background: #f9fafb; */
-  /* box-sizing: border-box; */
-}
-
-.content-item {
-  border: 2px solid #c4cdd5;
-  border-radius: 5px;
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  box-shadow: none;
-  padding: 0.7em;
-  /* compensates for the invisible border wrapper (otherwise our items wouldn't line up with 
-  other page coentent) Nevermind, might not need it */
-  /* margin: -2px; */
-  box-sizing: border-box;
-  transition-property: border-color, border-width;
-  transition-duration: 200ms;
-  will-change: border-color;
-  height: 100%;
-}
-
-.content-item:hover {
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  border-color: hsla(231.9, 46.9%, 56.5%, 0.8);
-}
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 5px));
   grid-column-gap: 10px;
   width: 100%;
   margin-top: 1em;
+}
+
+.border-wrapper {
+}
+
+.grid > div {
+  margin-bottom: 1em;
+  height: 100%;
 }
 
 .list {
@@ -116,6 +49,7 @@ to move: border-wrapper, content-item
 .list > div {
   width: 100%;
   box-sizing: border-box;
+  margin-bottom: 1em;
 }
 
 .controls {

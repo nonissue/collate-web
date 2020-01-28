@@ -95,14 +95,9 @@ const Songs = () => {
             Icon={ViewMajorMonotone}
           />
         </div>
-        {/* <div className={`${styles.grid} ${styles.stack} `}> */}
-
         <div
           className={`${styles.content}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
         >
-          {/* <div className={styles.stackException}>Exception but not applied</div>
-          <div>No Exception</div>
-          <div className={styles.stackException}>Exception</div> */}
           {shortList.map(song => (
             <div className={styles['border-wrapper']} key={song.id}>
               <div className={styles['content-item']}>
@@ -111,7 +106,6 @@ const Songs = () => {
                   album={song.album}
                   title={song.title}
                   id={song.id}
-                  // className={styles['content-item']}
                 />
               </div>
             </div>
