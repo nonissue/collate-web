@@ -2,6 +2,8 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { songs } from '../../mocks/songs';
 import { slugify } from '../../lib/slugify';
+
+import styles from './index.module.css';
 import { Nav } from '../../components/Nav';
 
 export default function SongPage() {
@@ -13,7 +15,7 @@ export default function SongPage() {
     <div>
       <Nav />
 
-      <div>
+      <div className={styles.page}>
         {currentSong && currentSong.title}
         <p>This is the song content.</p>
       </div>
