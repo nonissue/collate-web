@@ -20,8 +20,6 @@ Select:
     - Span: Label
     - Span: Selected Option
     - Span: Icon
-
-
 */
 
 const sortByOptions = [
@@ -79,7 +77,6 @@ const Songs = () => {
 
   return (
     <div>
-      {/* {state.viewMode} */}
       <div className={styles.songs}>
         <div className={`${styles.controls}`}>
           <Select

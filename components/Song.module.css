@@ -1,12 +1,12 @@
 /*
 TODO: Migrate inherited styles from song list so styling is atomic
+TODO: Fix grid item height
 */
-
 .item {
   border: 2px solid #c4cdd5;
   border-radius: 5px;
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
+  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02); */
   box-shadow: none;
   padding: 0.7em;
   box-sizing: border-box;
@@ -15,26 +15,21 @@ TODO: Migrate inherited styles from song list so styling is atomic
   will-change: border-color;
   height: 100%;
 }
-
 .item a {
   text-decoration: none;
 }
-
 .item:hover {
   box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
   border-color: hsla(231.9, 46.9%, 56.5%, 0.8);
 }
-
 .item {
   color: #637381;
   position: relative;
   height: 100%;
 }
-
 /* workaround to get item to be as large as border-wrapper parent 
 which is in songs.module.css (and should be moved here really)
-
 UPDATE: Probably not needed anymore*/
 .itemz::before {
   padding: 0.8em;
