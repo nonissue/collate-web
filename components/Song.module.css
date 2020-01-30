@@ -14,6 +14,9 @@ TODO: Fix grid item height
   transition-duration: 200ms;
   will-change: border-color;
   height: 100%;
+  color: #637381;
+  position: relative;
+  /* margin-bottom: 1em; */
 }
 .item a {
   text-decoration: none;
@@ -23,11 +26,7 @@ TODO: Fix grid item height
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
   border-color: hsla(231.9, 46.9%, 56.5%, 0.8);
 }
-.item {
-  color: #637381;
-  position: relative;
-  height: 100%;
-}
+
 /* workaround to get item to be as large as border-wrapper parent 
 which is in songs.module.css (and should be moved here really)
 UPDATE: Probably not needed anymore*/
@@ -36,6 +35,7 @@ UPDATE: Probably not needed anymore*/
   content: '';
   position: absolute;
   border-radius: 5px;
+
   width: 100%;
   height: 100%;
   left: 50%;
@@ -46,6 +46,7 @@ UPDATE: Probably not needed anymore*/
 .wrapper {
   line-height: 1.3em;
   height: 100%;
+  /* border: 1px solid red; */
 }
 .wrapper a {
   text-decoration: none;

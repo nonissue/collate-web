@@ -64,6 +64,7 @@ const Songs = () => {
   const [state, dispatch] = useReducer(listReducer, initialState);
   const shortList = songs.slice(0, 11);
 
+  // eslint-disable-next-line no-console
   console.log(state);
 
   // gotta be a better pattern for this
@@ -96,16 +97,11 @@ const Songs = () => {
           className={`${styles.content}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
         >
           {shortList.map(song => (
-            <div className={styles['border-wrapper']} key={song.id}>
-              <div className={styles['content-item']}>
-                <Song
-                  artist={song.artist.first}
-                  album={song.album}
-                  title={song.title}
-                  id={song.id}
-                />
-              </div>
+            // <div className={styles['border-wrapper']} key={song.id}>
+            <div className={styles['content-item']}>
+              <Song artist={song.artist.first} album={song.album} title={song.title} id={song.id} />
             </div>
+            // </div>
           ))}
         </div>
       </div>
