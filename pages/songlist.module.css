@@ -22,6 +22,10 @@
   margin-left: 0em;
 }
 
+.content {
+  margin-bottom: 1em;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 0.25em));

@@ -40,9 +40,9 @@ const initialState = {
 };
 
 const ListTypes = {
-  changeView: 'CHANGE_VIEW',
-  changeSortBy: 'CHANGE_SORT_BY',
-  changeSortOrder: 'CHANGE_SORT_ORDER',
+  changeView: 'VIEW_CHANGED',
+  changeSortBy: 'SORT_BY_CHANGED',
+  changeSortOrder: 'SORT_ORDER_CHANGED',
 };
 
 // types would really help here
@@ -62,7 +62,7 @@ function listReducer(state, action) {
 
 const Songs = () => {
   const [state, dispatch] = useReducer(listReducer, initialState);
-  const shortList = songs.slice(0, 11);
+  const shortList = songs.slice(0, 21);
 
   // eslint-disable-next-line no-console
   console.log(state);
@@ -97,11 +97,9 @@ const Songs = () => {
           className={`${styles.content}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
         >
           {shortList.map(song => (
-            // <div className={styles['border-wrapper']} key={song.id}>
-            <div className={styles['content-item']}>
+            <div className={styles['content-item']} key={song.id}>
               <Song artist={song.artist.first} album={song.album} title={song.title} id={song.id} />
             </div>
-            // </div>
           ))}
         </div>
       </div>
