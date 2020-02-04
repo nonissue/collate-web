@@ -5,6 +5,7 @@ import { songs } from '../../mocks/songs';
 import styles from './index.module.css';
 import { List } from '../../components/List';
 import { Nav } from '../../components/Nav';
+import { SongPage } from '../../components/SongPage';
 
 export default function Song() {
   const router = useRouter();
@@ -26,8 +27,16 @@ export default function Song() {
     <div>
       <Nav />
       <div className={styles.page}>
-        {currentSong && currentSong.title}
-        <p>This is the song content!</p>
+        {currentSong && (
+          <SongPage
+            id={currentSong.id}
+            title={currentSong.title}
+            artist={currentSong.artist}
+            tags={currentSong.tags}
+            genre={currentSong.genre}
+            album={currentSong.album}
+          />
+        )}
       </div>
     </div>
   );

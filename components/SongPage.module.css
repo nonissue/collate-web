@@ -1,0 +1,111 @@
+.wrapper {
+  font-size: 1.5em;
+}
+.tags {
+  /* font-family: monospace; */
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  line-height: 1.6em;
+  font-size: 0.7em;
+}
+.metadata {
+  transition-property: color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
+}
+.artist {
+  composes: metadata;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  font-size: 0.7em;
+  line-height: 1em;
+  color: #637381;
+}
+.title {
+  composes: metadata;
+  font-weight: bold;
+  margin-top: 0.15em;
+  color: #000639;
+  line-height: 1.2em;
+  color: #212b36;
+  color: #230051;
+}
+.album {
+  composes: metadata;
+  color: #637381;
+  margin-top: 0.2em;
+  line-height: 1em;
+  font-size: 0.8em;
+}
+.nextprev {
+  margin-top: 2em;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row;
+}
+.nextprev-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.2em;
+}
+.nextprev svg {
+  width: 1.2rem;
+  height: 1.2rem;
+
+  max-width: 100%;
+  max-height: 100%;
+  z-index: 20;
+  stroke-width: 0px;
+  stroke: #fff;
+  fill-opacity: 0.8;
+  fill: rgb(65, 21, 146);
+}
+.nextprev a {
+  text-decoration: none;
+  color: #637381;
+  line-height: 0;
+  padding: 0.3em 0.9em;
+}
+
+.nextprev a:hover {
+  border-color: #5c6ac4;
+}
+.nextprev a:hover ~ .backdrop {
+  box-shadow: 0 0 0px 0px #5c6ac4, 0 0 0 0 transparent;
+  background: #5c6ac4;
+}
+.backdrop {
+  background-color: #c4cdd5;
+  opacity: 0.7;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 0.5px transparent, 0 0.07rem 03px 0px rgba(22, 29, 37, 0.05);
+  border-radius: 6px;
+  transition-property: box-shadow, background-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.backdrop::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  /* background: linear-gradient(to bottom, white, #f9fafb); */
+  background: linear-gradient(to bottom, white, #f9fafb);
+  border-radius: 4px;
+}
+.nextprev a:hover ~ .backdrop::after {
+  background: #f9fafb;
+}

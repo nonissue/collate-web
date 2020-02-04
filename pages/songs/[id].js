@@ -5,8 +5,9 @@ import { slugify } from '../../lib/slugify';
 
 import styles from './index.module.css';
 import { Nav } from '../../components/Nav';
+import { SongPage } from '../../components/SongPage';
 
-export default function SongPage() {
+export default function Song() {
   const router = useRouter();
 
   const currentSong = songs.find(s => slugify(s.title) === router.query.id);
@@ -16,8 +17,16 @@ export default function SongPage() {
       <Nav />
 
       <div className={styles.page}>
-        {currentSong && currentSong.title}
-        <p>This is the song content.</p>
+        {currentSong && (
+          <SongPage
+            id={currentSong.id}
+            title={currentSong.title}
+            artist={currentSong.artist}
+            tags={currentSong.tags}
+            genre={currentSong.genre}
+            album={currentSong.album}
+          />
+        )}
       </div>
     </div>
   );
