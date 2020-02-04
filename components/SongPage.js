@@ -25,26 +25,28 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
         {/* <div className={styles.genre}>{genre}</div> */}
       </div>
       <div className={styles.nextprev}>
-        <div className={styles['nextprev-button']}>
-          {prev && (
+        {prev && (
+          <div className={styles['nextprev-button']}>
             <Link href={`/songs?id=${prev.id}`} as={`/songs/${slugify(prev.title)}`}>
               <a>
                 <ArrowLeftMinor viewBox="0 0 20 20" />
               </a>
             </Link>
-          )}
-          <div className={styles.backdrop} />
-        </div>
-        <div className={styles['nextprev-button']}>
-          {next && (
+
+            <div className={styles.backdrop} />
+          </div>
+        )}
+        {next && (
+          <div className={styles['nextprev-button']}>
             <Link href={`/songs?id=${next.id}`} as={`/songs/${slugify(next.title)}`}>
               <a>
                 <ArrowRightMinor viewBox="0 0 20 20" />
               </a>
             </Link>
-          )}
-          <div className={styles.backdrop} />
-        </div>
+
+            <div className={styles.backdrop} />
+          </div>
+        )}
       </div>
     </div>
   );
