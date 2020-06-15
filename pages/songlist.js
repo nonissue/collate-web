@@ -93,7 +93,7 @@ const Songs = () => {
             Icon={ViewMajorMonotone}
           />
         </div>
-        <div className={`${styles.content}  ${styles[state.viewMode]}`}>
+        <div className={`${styles.content} ${styles[state.viewMode]}`}>
           {shortList.map(song => (
             <div className={styles['content-item']} key={song.id}>
               <Song artist={song.artist.first} album={song.album} title={song.title} id={song.id} />
