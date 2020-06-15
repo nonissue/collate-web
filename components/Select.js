@@ -53,6 +53,7 @@ const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
 Select.defaultProps = {
   labelinline: true,
   onChangeSelect: () => {},
+  Icon: undefined,
 };
 
 Select.propTypes = {
@@ -65,6 +66,7 @@ Select.propTypes = {
   label: PropTypes.string.isRequired,
   labelinline: PropTypes.bool,
   onChangeSelect: PropTypes.func,
+  Icon: PropTypes.element,
 };
 
 export default Select;
