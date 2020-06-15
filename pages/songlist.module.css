@@ -1,31 +1,30 @@
-.songs {
+.wrapper {
   max-width: 90%;
   margin: 0 auto;
-
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
 }
-
-.songs h1 {
+@media all and (min-width: 600px) {
+  .wrapper {
+    max-width: 60%;
+  }
+}
+.wrapper h1 {
   color: #4a5568;
   font-size: 1.2em;
-  margin: 5px;
+  margin: 5px; /* @todo */
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
 }
-
-.songs h3 {
+.wrapper h3 {
   color: #4a5568;
   font-size: 1em;
   margin: 5px;
 }
-
 .controls * + * {
   margin-left: 0em;
 }
-
 .content {
   margin-bottom: 1em;
 }
-
 .grid {
   display: grid;
   grid-template-columns: repeat(2, calc(50% - 0.25em));
@@ -34,15 +33,12 @@
   width: 100%;
   margin-top: 0.5em;
 }
-
 .content-item {
   height: 100%;
 }
-
 .grid > div {
   height: 100%;
 }
-
 .list {
   display: flex;
   flex-wrap: wrap;
@@ -50,15 +46,21 @@
   flex-direction: column;
   margin-top: 0.5em;
 }
-
 .list > div {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 0.5em;
 }
-
 .controls {
   display: flex;
-  justify-content: flex-end;
   flex-direction: column;
+}
+
+@media all and (min-width: 600px) {
+  .controls {
+    flex-direction: row;
+  }
+  .controls > div:first-child {
+    margin-right: 0.5vw;
+  }
 }

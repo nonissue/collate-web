@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media all and (min-width: 600px) {
+  .wrapper {
+    max-width: 60%;
+  }
+}
+
+.wrapper a {
+  text-decoration-line: underline;
+  color: rgb(65, 21, 146);
+  color: #000639;
+}
+
+.wrapper a:hover {
+  color: #637381;
+}

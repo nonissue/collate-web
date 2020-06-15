@@ -5,6 +5,13 @@
   margin-top: 1em;
   margin-bottom: 1em;
 }
+
+@media all and (min-width: 600px) {
+  .nav {
+    max-width: 60%;
+  }
+}
+
 .nav ul,
 .nav ul > li {
   padding: 10px 0px;
