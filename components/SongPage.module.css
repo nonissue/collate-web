@@ -3,40 +3,13 @@
   max-width: 400px;
   margin: 0 auto;
   text-align: center;
-  border: 2px solid #c4cdd5;
+  border: 1px solid #c4cdd5;
   border-radius: 5px;
-  padding: 0.7em;
   background: linear-gradient(to bottom, white, #f9fafb9c);
   box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.029),
     0 3.4px 4.4px rgba(0, 0, 0, 0.024), 0 6px 5.8px rgba(0, 0, 0, 0.02);
-  /* background: red; */
 }
-
-@media all and (min-width: 600px) {
-  .wrapper {
-    /* max-width: 60%; */
-  }
-}
-
-/* shitty button reset */
-.wrapper button {
-  font-family: inherit; /* 1 */
-  font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
-  margin: 0; /* 2 */
-  border: 0;
-  border-radius: 0rem;
-  padding: 0;
-  padding: 0rem 0.3rem;
-  cursor: pointer;
-  background: white;
-}
-.wrapper button:hover {
-  background: #5c6ac4;
-}
-
 .tags {
-  /* font-family: monospace; */
   text-transform: uppercase;
   font-weight: 300;
   letter-spacing: 0.1em;
@@ -44,6 +17,7 @@
   font-size: 0.7em;
 }
 .metadata {
+  margin-top: 1rem;
   transition-property: color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -78,7 +52,9 @@
   text-transform: uppercase;
   display: flex;
   flex-direction: row;
+  overflow: hidden;
   justify-content: space-between;
+  border-top: 1px solid #eee;
 }
 .controls-playback {
   display: flex;
@@ -89,15 +65,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border-left: 1px solid #eee;
 }
 .controls-button {
   position: relative;
   display: flex;
-  /* padding: 0.25rem 0.5rem; */
-  /* padding: 0; */
   align-items: center;
   justify-content: center;
-  /* margin-right: 0.2em; */
 }
 .controls svg {
   width: 1.2em;
@@ -114,17 +88,13 @@
 .controls a {
   text-decoration: none;
   color: #637381;
-
   line-height: 1.15;
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
-  /* display: flex; */
-
-  padding: 0.25rem 0.3rem;
+  padding: 0.15rem 0.3rem;
   z-index: 20;
 }
-
 .controls a:hover {
   border-color: #5c6ac4;
 }
@@ -132,18 +102,15 @@
   box-shadow: 0 0 0px 0px #5c6ac4, 0 0 0 0 transparent;
   background: #5c6ac4ad;
 } */
-
+/* TODO: Remove backdrop, as I am no longer doing fancy border hovers */
 .backdrop {
   opacity: 1;
-  border: 0px solid transparent;
-  /* box-shadow: 0 0 0 0.5px transparent, 0 0.07rem 03px 0px rgba(22, 29, 37, 0.05); */
-  /* border-radius: 5px; */
   transition-property: box-shadow, background-color;
-  transition-duration: 300ms;
-  /* transition-timing-function: cubic-bezier(0.64, 0, 0.9, 1); */
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.9, 1);
   position: absolute;
-  /* z-index: 0; */
   top: 0;
+  background-color: transparent;
   bottom: 0;
   left: 0;
   right: 0;
@@ -155,16 +122,15 @@
   bottom: 0;
   left: 0;
   right: 0;
-  display: block;
-  background: white;
-  /* background: linear-gradient(to bottom, white, #f9fafb); */
-  /* background: linear-gradient(to bottom, white, #f9fafb); */
-  border-radius: 4px;
+  /* I think z-index is required so we dont get border-radius clipping on parent */
+  z-index: -1;
+  background-color: transparent;
+  transition-property: box-shadow, background-color;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.9, 1);
 }
 .controls a:hover ~ .backdrop::after {
   background: #d0d7df;
-  background: #ebf0f5;
-  /* background-color: red; */
 }
 .controls-disabled {
   opacity: 0.5;
@@ -172,9 +138,7 @@
 .controls-disabled a:hover {
   pointer-events: none;
 }
-
 .play {
-  /* composes: controls; */
   margin-top: 1em;
 }
 .play svg {
@@ -182,6 +146,5 @@
   height: 1.6rem;
 }
 .nextprev {
-  /* composes: controls; */
   margin-top: 1em;
 }
