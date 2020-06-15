@@ -6,6 +6,8 @@ import {
   ArrowLeftMinor,
   PlayCircleMajorMonotone,
   PauseCircleMajorMonotone,
+  PaginationStartMinor,
+  PaginationEndMinor,
 } from '@shopify/polaris-icons';
 import styles from './SongPage.module.css';
 import { songs } from '../mocks/songs';
@@ -21,7 +23,49 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
   return (
     <div className={styles.wrapper}>
       <div>
-        <div className={`${styles.controls} ${styles.nextprev}`}>
+        <div className={styles.artist}>
+          {artist.first} {artist.last}
+        </div>
+        <div className={styles.title}>{title}</div>
+        <div className={styles.album}>{album}</div>
+        {/* <div className={styles.tags}>{tags.map(t => `${t} `)}</div> */}
+        {/* <div className={styles.genre}>{genre}</div> */}
+      </div>
+      <div className={`${styles.controls} ${styles.nextprev}`}>
+        <div className={styles['controls-playback']}>
+          <div className={styles['controls-button']}>
+            <a href="#" role="button" onClick={() => setIsPlaying(!isPlaying)}>
+              <PaginationStartMinor viewBox="0 0 20 20" />
+            </a>
+            <div className={styles.backdrop} />
+          </div>
+          <button
+            type="button"
+            className={`${styles['controls-button']}`}
+            onClick={() => setIsPlaying(!isPlaying)}
+          >
+            <a>
+              {isPlaying ? (
+                <PauseCircleMajorMonotone viewBox="0 0 20 20" />
+              ) : (
+                <PlayCircleMajorMonotone viewBox="0 0 20 20" />
+              )}
+            </a>
+            <div className={styles.backdrop} />
+          </button>
+
+          <button
+            type="button"
+            className={`${styles['controls-button']}`}
+            onClick={() => setIsPlaying(!isPlaying)}
+          >
+            <a>
+              <PaginationEndMinor viewBox="0 0 20 20" />
+            </a>
+            <div className={styles.backdrop} />
+          </button>
+        </div>
+        <div className={styles['controls-nav']}>
           {prev ? (
             <div className={styles['controls-button']}>
               <Link href={`/songs?id=${prev.id}`} as={`/songs/${slugify(prev.title)}`}>
@@ -61,29 +105,6 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
             </div>
           )}
         </div>
-        <div className={styles.artist}>
-          {artist.first} {artist.last}
-        </div>
-        <div className={styles.title}>{title}</div>
-        <div className={styles.album}>{album}</div>
-        {/* <div className={styles.tags}>{tags.map(t => `${t} `)}</div> */}
-        {/* <div className={styles.genre}>{genre}</div> */}
-      </div>
-      <div className={`${styles.controls} ${styles.play}`}>
-        <button
-          type="button"
-          className={`${styles['controls-button']}`}
-          onClick={() => setIsPlaying(!isPlaying)}
-        >
-          <a>
-            {isPlaying ? (
-              <PauseCircleMajorMonotone viewBox="0 0 20 20" />
-            ) : (
-              <PlayCircleMajorMonotone viewBox="0 0 20 20" />
-            )}
-          </a>
-          <div className={styles.backdrop} />
-        </button>
       </div>
     </div>
   );
