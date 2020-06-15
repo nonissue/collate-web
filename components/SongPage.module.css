@@ -1,6 +1,14 @@
 .wrapper {
   font-size: 1.5em;
+  max-width: 90%;
 }
+
+@media all and (min-width: 600px) {
+  .wrapper {
+    max-width: 60%;
+  }
+}
+
 .tags {
   /* font-family: monospace; */
   text-transform: uppercase;

@@ -16,7 +16,7 @@ export default function Song() {
     return (
       <div>
         <Nav />
-        <div className={styles.page}>
+        <div className={styles.wrapper}>
           <List />
         </div>
       </div>
@@ -24,9 +24,9 @@ export default function Song() {
   }
 
   return (
-    <div>
+    <>
       <Nav />
-      <div className={styles.page}>
+      <div className={styles.wrapper}>
         {currentSong && (
           <SongPage
             id={currentSong.id}
@@ -38,6 +38,6 @@ export default function Song() {
           />
         )}
       </div>
-    </div>
+    </>
   );
 }

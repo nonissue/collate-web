@@ -5,6 +5,7 @@ import { slugify } from '../../lib/slugify';
 
 import styles from './index.module.css';
 import { Nav } from '../../components/Nav';
+import { List } from '../../components/List';
 import { SongPage } from '../../components/SongPage';
 
 export default function Song() {
@@ -12,11 +13,25 @@ export default function Song() {
 
   const currentSong = songs.find(s => slugify(s.title) === router.query.id);
 
-  return (
-    <div>
-      <Nav />
+  if (!currentSong) {
+    return (
+      <div>
+        <Nav />
 
-      <div className={styles.page}>
+        <div className={styles.wrapper}>
+          <div className={styles.error}>
+            <b>Error 404:</b> Song not found
+          </div>
+          <List />
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <Nav />
+      <div className={styles.wrapper}>
         {currentSong && (
           <SongPage
             id={currentSong.id} // @audit id not used
@@ -28,6 +43,6 @@ export default function Song() {
           />
         )}
       </div>
-    </div>
+    </>
   );
 }
