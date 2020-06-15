@@ -1,5 +1,10 @@
 # Issues/Next
 
+## General
+
+- [ ] Make select an atomic, reusable component.
+- [ ] Simplify logic in api wrote for songs ([id] vs index)
+
 ## CSS
 
 - [~] Figure out vendor prefixes / if they are necessary?
