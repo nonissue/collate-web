@@ -28,8 +28,8 @@ const sortByOptions = [
 ];
 
 const viewModeOptions = [
-  { value: 'grid', label: 'Grid' },
   { value: 'list', label: 'List' },
+  { value: 'grid', label: 'Grid' },
 ];
 
 // initial state needs to be the same as the first option provided
@@ -78,7 +78,7 @@ const Songs = () => {
 
   return (
     <div>
-      <div className={styles.songs}>
+      <div className={styles.wrapper}>
         <div className={`${styles.controls}`}>
           <Select
             options={sortByOptions}
@@ -93,9 +93,7 @@ const Songs = () => {
             Icon={ViewMajorMonotone}
           />
         </div>
-        <div
-          className={`${styles.content}  ${state.viewMode === 'list' ? styles.list : styles.grid}`}
-        >
+        <div className={`${styles.content}  ${styles[state.viewMode]}`}>
           {shortList.map(song => (
             <div className={styles['content-item']} key={song.id}>
               <Song artist={song.artist.first} album={song.album} title={song.title} id={song.id} />
