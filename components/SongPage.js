@@ -13,6 +13,7 @@ import styles from './SongPage.module.css';
 import { songs } from '../mocks/songs';
 import { slugify } from '../lib/slugify';
 
+// eslint-disable-next-line no-unused-vars
 export const SongPage = ({ id, title, artist, album, tags, genre }) => {
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -55,31 +56,6 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
             </a>
             <div className={styles.backdrop} />
           </div>
-          {/* <button
-            type="button"
-            className={`${styles['controls-button']}`}
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
-            <a>
-              {isPlaying ? (
-                <PauseCircleMajorMonotone viewBox="0 0 20 20" />
-              ) : (
-                <PlayCircleMajorMonotone viewBox="0 0 20 20" />
-              )}
-            </a>
-            <div className={styles.backdrop} />
-          </button>
-
-          <button
-            type="button"
-            className={`${styles['controls-button']}`}
-            onClick={() => setIsPlaying(!isPlaying)}
-          >
-            <a>
-              <PaginationEndMinor viewBox="0 0 20 20" />
-            </a>
-            <div className={styles.backdrop} />
-          </button> */}
         </div>
         <div className={styles['controls-nav']}>
           {prev ? (
@@ -97,8 +73,6 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
               <a>
                 <ArrowLeftMinor viewBox="0 0 20 20" />
               </a>
-
-              {/* <div className={styles.backdrop} /> */}
             </div>
           )}
           {next ? (
@@ -116,8 +90,6 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
               <a>
                 <ArrowRightMinor viewBox="0 0 20 20" />
               </a>
-
-              {/* <div className={styles.backdrop} /> */}
             </div>
           )}
         </div>

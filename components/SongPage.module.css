@@ -76,7 +76,6 @@
 .controls svg {
   width: 1.2em;
   height: 1.2rem;
-
   max-width: 100%;
   max-height: 100%;
   z-index: 20;
@@ -98,11 +97,7 @@
 .controls a:hover {
   border-color: #5c6ac4;
 }
-/* .nextprev a:hover ~ .backdrop {
-  box-shadow: 0 0 0px 0px #5c6ac4, 0 0 0 0 transparent;
-  background: #5c6ac4ad;
-} */
-/* TODO: Remove backdrop, as I am no longer doing fancy border hovers */
+/* TODO: ☐ Remove backdrop, as I am no longer doing fancy border hovers */
 .backdrop {
   opacity: 1;
   transition-property: box-shadow, background-color;
@@ -126,8 +121,9 @@
   z-index: -1;
   background-color: transparent;
   transition-property: box-shadow, background-color;
-  transition-duration: 200ms;
+  transition-duration: 100ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.9, 1);
+  will-change: background-color;
 }
 .controls a:hover ~ .backdrop::after {
   background: #d0d7df;
