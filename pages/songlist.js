@@ -88,9 +88,6 @@ const Songs = () => {
   const titleSort = shortList.slice().sort(dynamicSort('title'));
   const albumSort = shortList.slice().sort(dynamicSort('album'));
 
-  // eslint-disable-next-line no-console
-  console.log(state);
-
   // gotta be a better pattern for this
   const changeView = viewMode => {
     dispatch({ type: ListTypes.changeView, payload: viewMode });

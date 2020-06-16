@@ -15,7 +15,10 @@ const about = () => {
       <Nav />
 
       <div className={styles.wrapper}>
-        A project by <a href="https://nonissue.org">Andy Williams</a>.
+        Essentially a react UI playground. Largely non-functional at this point.
+        <br />
+        <br />A <a href="https://github.com/nonissue/collate-web">project</a> by{' '}
+        <a href="https://nonissue.org">Andy Williams</a>.
       </div>
     </div>
   );
