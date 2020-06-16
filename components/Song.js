@@ -10,9 +10,10 @@ const Song = ({ title, artist, album, id }) => (
     or should be route to /songs/slug directly? 
     
     Note: `/song?id=${id} seems faster in devolopment
+    Update: ALSO faster in production, dunno why
     */}
-    {/* <Link href={`/songs?id=${id}`} as={`/songs/${slugify(title)}`}> */}
-    <Link href={`/songs/[${slugify(title)}]`} as={`/songs/${slugify(title)}`}>
+    <Link href={`/songs?id=${id}`} as={`/songs/${slugify(title)}`}>
+      {/* <Link href={`/songs/[${slugify(title)}]`} as={`/songs/${slugify(title)}`}> */}
       <a>
         <div className={styles.item}>
           <div>
