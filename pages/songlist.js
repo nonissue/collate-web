@@ -23,8 +23,10 @@ Select:
 */
 
 const sortByOptions = [
-  { value: 'date', label: 'Date' },
-  { value: 'popular', label: 'Popular' },
+  // { value: 'date', label: 'Date' },
+  // { value: 'popular', label: 'Popular' },
+  { value: 'title', label: 'Title' },
+  { value: 'album', label: 'Album' },
 ];
 
 const viewModeOptions = [
@@ -60,9 +62,31 @@ function listReducer(state, action) {
   }
 }
 
+// Sort function for sorting array of objects by property
+// can reverse sort order by prepending '-' to property
+function dynamicSort(property) {
+  let sortOrder = 1;
+  let targetProperty = property;
+  if (property[0] === '-') {
+    sortOrder = -1;
+    targetProperty = property.substr(1);
+  }
+  return (a, b) => {
+    /* next line works with strings and numbers,
+     * and you may want to customize it to your needs
+     */
+    const result =
+      // eslint-disable-next-line no-nested-ternary
+      a[targetProperty] < b[targetProperty] ? -1 : a[targetProperty] > b[targetProperty] ? 1 : 0;
+    return result * sortOrder;
+  };
+}
+
 const Songs = () => {
   const [state, dispatch] = useReducer(listReducer, initialState);
   const shortList = songs.slice(0, 21);
+  const titleSort = shortList.slice().sort(dynamicSort('title'));
+  const albumSort = shortList.slice().sort(dynamicSort('album'));
 
   // eslint-disable-next-line no-console
   console.log(state);
@@ -76,8 +100,21 @@ const Songs = () => {
     dispatch({ type: ListTypes.changeSortBy, payload: sortBy });
   };
 
+  // add this to useEffect in case it is blocking?
+  const getList = sortBy => {
+    switch (sortBy) {
+      case 'album':
+        return albumSort;
+      case 'title':
+        return titleSort;
+      default:
+        return shortList;
+    }
+  };
+
   return (
     <div>
+      {}
       <div className={styles.wrapper}>
         <div className={`${styles.controls}`}>
           <Select
@@ -94,11 +131,47 @@ const Songs = () => {
           />
         </div>
         <div className={`${styles.content} ${styles[state.viewMode]}`}>
-          {shortList.map(song => (
-            <div className={styles['content-item']} key={song.id}>
-              <Song artist={song.artist.first} album={song.album} title={song.title} id={song.id} />
-            </div>
-          ))}
+          {getList(state.sortBy) &&
+            getList(state.sortBy).map(song => {
+              return (
+                <div className={styles['content-item']} key={song.id}>
+                  <Song
+                    artist={song.artist.first}
+                    album={song.album}
+                    title={song.title}
+                    id={song.id}
+                    popularity={Math.floor(Math.random() * 10)}
+                  />
+                </div>
+              );
+            })}
+          {/* {false && state.sortBy === 'title'
+            ? titleSort.map(song => {
+                return (
+                  <div className={styles['content-item']} key={song.id}>
+                    <Song
+                      artist={song.artist.first}
+                      album={song.album}
+                      title={song.title}
+                      id={song.id}
+                      popularity={Math.floor(Math.random() * 10)}
+                    />
+                  </div>
+                );
+              })
+            : shortList.map(song => {
+                return (
+                  <div className={styles['content-item']} key={song.id}>
+                    <Song
+                      artist={song.artist.first}
+                      album={song.album}
+                      title={song.title}
+                      id={song.id}
+                      popularity={Math.floor(Math.random() * 10)}
+                    />
+                  </div>
+                );
+              })} */}
         </div>
       </div>
     </div>
