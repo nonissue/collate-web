@@ -20,8 +20,6 @@ export default function Song() {
   const slug = router.query.slug || [];
   const currentSong = songs.find(s => slugify(s.title) === slug[0]);
 
-  console.log(router.query);
-
   // If no slug (eg. '/songs/song-name`), render the song list
   if (!router.query.slug) {
     return (

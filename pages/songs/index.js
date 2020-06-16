@@ -12,8 +12,6 @@ export default function Song() {
   const router = useRouter();
   const slug = router.query.id || [];
   const currentSong = songs.find(s => slugify(s.id) === slug);
-
-  console.log('index route hit');
   // Currentsong should never match at this route?
 
   if (!currentSong) {
