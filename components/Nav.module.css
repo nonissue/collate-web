@@ -1,17 +1,14 @@
 .nav {
-  /* font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif; */
   max-width: 90%;
   margin: 0 auto;
   margin-top: 1em;
   margin-bottom: 1em;
 }
-
 @media all and (min-width: 600px) {
   .nav {
     max-width: 60%;
   }
 }
-
 .nav ul,
 .nav ul > li {
   padding: 10px 0px;
@@ -27,8 +24,8 @@
 .logo a {
   color: rgb(27, 118, 134);
   color: #5c6ac4;
+  font-weight: 600;
 }
-
 .nav ul {
   display: flex;
   list-style-type: none;

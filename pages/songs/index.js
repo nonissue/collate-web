@@ -2,23 +2,26 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import { songs } from '../../mocks/songs';
 
-import styles from './index.module.css';
-import { List } from '../../components/List';
+import styles from './songs.module.css';
+import Songs from '../songlist';
 import { Nav } from '../../components/Nav';
 import { SongPage } from '../../components/SongPage';
+import { slugify } from '../../lib/slugify';
 
 export default function Song() {
   const router = useRouter();
+  const slug = router.query.id || [];
+  const currentSong = songs.find(s => slugify(s.id) === slug);
 
-  const currentSong = songs.find(s => s.id === router.query.id);
+  console.log('index route hit');
+  // Currentsong should never match at this route?
 
   if (!currentSong) {
     return (
       <div>
         <Nav />
-        <div className={styles.wrapper}>
-          <List />
-        </div>
+        <Songs />
+        <div className={styles.wrapper}>wat</div>
       </div>
     );
   }

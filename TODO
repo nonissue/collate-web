@@ -5,6 +5,7 @@ General:
     ☐ this could be quite complicated!
     ☐ Maybe set the songs list with react context? Or just set it on parent component?
   ✔ Add basic sorting (by title, artist) @done(20-06-15 19:24)
+  ☐ @critical We LINK using song ID, but catch routes using [...slug]. Switch to one or the other everywhere.
 
 Enhancements:
   ☐ Zustand for state?

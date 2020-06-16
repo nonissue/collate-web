@@ -31,13 +31,10 @@
   flex-direction: row;
 }
 .artist {
-  /* composes: metadata; */
-
   font-weight: 300;
   color: #637381;
 }
 .album {
-  /* composes: metadata; */
   color: #919eab;
   font-style: italic;
 }

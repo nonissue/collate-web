@@ -6,7 +6,13 @@ import { slugify } from '../lib/slugify';
 
 const Song = ({ title, artist, album, id }) => (
   <div className={styles.wrapper}>
-    <Link href={`/songs?id=${id}`} as={`/songs/${slugify(title)}`}>
+    {/* TODO:  Is this the best way to ling to the song? 
+    or should be route to /songs/slug directly? 
+    
+    Note: `/song?id=${id} seems faster in devolopment
+    */}
+    {/* <Link href={`/songs?id=${id}`} as={`/songs/${slugify(title)}`}> */}
+    <Link href={`/songs/[${slugify(title)}]`} as={`/songs/${slugify(title)}`}>
       <a>
         <div className={styles.item}>
           <div>
