@@ -66,7 +66,7 @@ Select.propTypes = {
   label: PropTypes.string.isRequired,
   labelinline: PropTypes.bool,
   onChangeSelect: PropTypes.func,
-  Icon: PropTypes.element,
+  Icon: PropTypes.elementType,
 };
 
 export default Select;
