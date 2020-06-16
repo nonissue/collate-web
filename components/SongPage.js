@@ -23,12 +23,16 @@ export const SongPage = ({ id, title, artist, album, tags, genre }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div>
-        <div className={styles.artist}>
-          {artist.first} {artist.last}
-        </div>
+      <div className={styles.metadata}>
         <div className={styles.title}>{title}</div>
-        <div className={styles.album}>{album}</div>
+        <div className={styles.artistalbum}>
+          <div className={styles.artist}>
+            {artist.first} {artist.last}
+          </div>
+          &nbsp;—&nbsp;
+          <div className={styles.album}>{album}</div>
+        </div>
+
         {/* <div className={styles.tags}>{tags.map(t => `${t} `)}</div> */}
         {/* <div className={styles.genre}>{genre}</div> */}
       </div>

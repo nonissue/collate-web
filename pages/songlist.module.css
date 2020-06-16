@@ -1,7 +1,7 @@
 .wrapper {
   max-width: 90%;
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif; */
 }
 @media all and (min-width: 600px) {
   .wrapper {

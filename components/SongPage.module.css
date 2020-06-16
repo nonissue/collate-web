@@ -1,8 +1,9 @@
 .wrapper {
-  font-size: 1.5em;
+  font-size: 1em;
   max-width: 400px;
   margin: 0 auto;
-  text-align: center;
+  /* padding: 1em; */
+  /* text-align: center; */
   border: 1px solid #c4cdd5;
   border-radius: 5px;
   background: linear-gradient(to bottom, white, #f9fafb9c);
@@ -17,37 +18,39 @@
   font-size: 0.7em;
 }
 .metadata {
-  margin-top: 1rem;
+  padding: 1em;
+  /* padding-top: 1rem; */
+  color: #dfe3e8;
   transition-property: color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
 }
-.artist {
-  composes: metadata;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-weight: 300;
-  font-size: 0.6em;
-  line-height: 0.9em;
-  color: #637381;
+.artistalbum {
+  margin-top: 0.2em;
+  display: flex;
+  flex-direction: row;
 }
-.title {
-  composes: metadata;
-  font-weight: bold;
-  margin-top: 0.15em;
-  color: #000639;
-  line-height: 1.4em;
-  color: #212b36;
-  color: #230051;
+.artist {
+  /* composes: metadata; */
+
+  font-weight: 300;
+  color: #637381;
 }
 .album {
-  composes: metadata;
-  color: #637381;
-  margin-top: 0.2em;
+  /* composes: metadata; */
+  color: #919eab;
   font-style: italic;
-  line-height: 0.8em;
-  font-size: 0.8em;
 }
+.title {
+  font-weight: 700;
+  font-size: 1.3em;
+  color: #000639;
+  line-height: 1.3em;
+  color: #212b36;
+  color: #230051;
+  letter-spacing: -0.015em;
+}
+
 .controls {
   text-transform: uppercase;
   display: flex;
@@ -59,9 +62,9 @@
 .controls-playback {
   display: flex;
   flex-direction: row;
+  visibility: hidden;
 }
 .controls-nav {
-  /* width: 12%; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -74,8 +77,9 @@
   justify-content: center;
 }
 .controls svg {
-  width: 1.2em;
-  height: 1.2rem;
+  padding-top: 3px;
+  width: 1rem;
+  height: 1rem;
   max-width: 100%;
   max-height: 100%;
   z-index: 20;
@@ -91,7 +95,7 @@
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
   line-height: 1.15; /* 1 */
-  padding: 0.15rem 0.3rem;
+  padding: 0.15rem 0.4rem;
   z-index: 20;
 }
 .controls a:hover {
@@ -135,12 +139,10 @@
   pointer-events: none;
 }
 .play {
-  margin-top: 1em;
 }
 .play svg {
   width: 1.6rem;
   height: 1.6rem;
 }
 .nextprev {
-  margin-top: 1em;
 }
