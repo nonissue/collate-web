@@ -2,6 +2,10 @@ General:
 
 ☐ Make select an atomic, reusable component.
 ☐ Simplify logic in api wrote for songs ([id] vs index)
+☐ Prev/next nav doesn't respect list ordering @high 
+  ☐ this could be quite complicated!
+  ☐ Maybe set the songs list with react context? Or just set it on parent component?
+✔ Add basic sorting (by title, artist) @done(20-06-15 19:24)
 
 Enhancements:
 
