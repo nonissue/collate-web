@@ -17,6 +17,7 @@ TODO: Fix grid item height
   color: #637381;
   position: relative;
   background: linear-gradient(to bottom, white, #f9fafb);
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica, sans-serif;
 }
 .item a {
   text-decoration: none;

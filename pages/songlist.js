@@ -64,6 +64,7 @@ function listReducer(state, action) {
 
 // Sort function for sorting array of objects by property
 // can reverse sort order by prepending '-' to property
+// TODO: move to lib
 function dynamicSort(property) {
   let sortOrder = 1;
   let targetProperty = property;
@@ -142,33 +143,6 @@ const Songs = () => {
                 </div>
               );
             })}
-          {/* {false && state.sortBy === 'title'
-            ? titleSort.map(song => {
-                return (
-                  <div className={styles['content-item']} key={song.id}>
-                    <Song
-                      artist={song.artist.first}
-                      album={song.album}
-                      title={song.title}
-                      id={song.id}
-                      popularity={Math.floor(Math.random() * 10)}
-                    />
-                  </div>
-                );
-              })
-            : shortList.map(song => {
-                return (
-                  <div className={styles['content-item']} key={song.id}>
-                    <Song
-                      artist={song.artist.first}
-                      album={song.album}
-                      title={song.title}
-                      id={song.id}
-                      popularity={Math.floor(Math.random() * 10)}
-                    />
-                  </div>
-                );
-              })} */}
         </div>
       </div>
     </div>

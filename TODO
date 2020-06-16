@@ -19,6 +19,8 @@ CSS:
   - Nevermind, handled by next outta the box.
 ✔ Media queries? @done(20-06-15 17:39)
 ✔ boxshadow on select looks bad in chrome @done(20-06-15 17:39)
+☐ Set defaults in global stylesheet
+☐ Refactor css wrappers + width setting (it's inconsistenly applied between components / parents ATM)
 
 Theming:
 
