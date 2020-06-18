@@ -9,6 +9,11 @@
     max-width: 60%;
   }
 }
+.nav h1 {
+  font-size: 1rem;
+  margin: 0;
+  line-height: initial;
+}
 .nav ul,
 .nav ul > li {
   padding: 10px 0px;

@@ -3,13 +3,15 @@ import Link from 'next/link';
 import styles from './Nav.module.css';
 
 export const Nav = () => (
-  <>
+  <heading>
     <nav className={styles.nav}>
       <ul>
         <li className={styles.logo}>
-          <Link href="/">
-            <a>Collate Music</a>
-          </Link>
+          <h1>
+            <Link href="/">
+              <a>Collate Music</a>
+            </Link>
+          </h1>
         </li>
         <li>
           <Link href="/songs">
@@ -37,5 +39,5 @@ export const Nav = () => (
         }
       `}</style>
     </nav>
-  </>
+  </heading>
 );

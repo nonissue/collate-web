@@ -39,6 +39,9 @@ Next.js:
     ✔ Ahh, i think that fixed it. Still get a preload warning, but nothing major. @done(20-06-15 17:39)
     ✔ and we can conditionally render the songs list in index.js. @done(20-06-15 17:39)
     ✔ Had to handle direct visits with [id].js, but seems to be working @done(20-06-15 17:39)
+  ☐ implement `getStaticPaths` && `getStaticProps`
+    ☐ Read from json file, output slugified file per song
+    ☐ https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation
   ☐ figure out case sensitivity and routing (maybe using now.json?)
     - Might be fixed?
     - https://spectrum.chat/zeit/now/defining-next-js-route-rewrites-in-now-json~5e7c14aa-752a-45c3-a744-89721ecf7ceb

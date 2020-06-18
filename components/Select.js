@@ -18,6 +18,7 @@ import SelectIcon from '../assets/select_minor.svg';
 
 // eslint-disable-next-line no-unused-vars
 const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
+  const labelName = 'test';
   const [selected, setSelected] = useState(options[0]);
   const handleChange = e => {
     let newSelection = options.find(option => e.currentTarget.value === option.value);
@@ -30,13 +31,24 @@ const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
 
   return (
     <div className={styles.wrapper}>
-      <select className={styles.input} onBlur={handleChange} onChange={handleChange}>
+      {/* <label htmlFor="custom-select" className={styles['hidden-label']}>
+        {labelName}
+      </label> */}
+      <select
+        aria-label="select"
+        id="custom-select"
+        className={styles.input}
+        type=""
+        onBlur={handleChange}
+        onChange={handleChange}
+      >
         {options.map(option => (
           <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}
       </select>
+
       <div className={styles.content}>
         {Icon ? <Icon viewBox="0 0 20 20" className={styles['label-icon']} /> : ''}
         <span className={styles.label}>{label}</span>
