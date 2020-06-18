@@ -18,7 +18,6 @@ import SelectIcon from '../assets/select_minor.svg';
 
 // eslint-disable-next-line no-unused-vars
 const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
-  const labelName = 'test';
   const [selected, setSelected] = useState(options[0]);
   const handleChange = e => {
     let newSelection = options.find(option => e.currentTarget.value === option.value);
@@ -36,7 +35,7 @@ const Select = ({ options, label, labelinline, onChangeSelect, Icon }) => {
       </label> */}
       <select
         aria-label="select"
-        id="custom-select"
+        id={`Select ${label}`}
         className={styles.input}
         type=""
         onBlur={handleChange}
