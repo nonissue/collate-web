@@ -10,7 +10,10 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+          <meta name="Description" content="Collate music" />
+        </Head>
         <body>
           <Main />
           <NextScript />
